@@ -32,6 +32,7 @@ function Page({}: Props) {
             setTotalPrice(
                 cartPrice + deliveryPriceConst
             )
+
         },[cartPrice,deliveryPrice]
     )
 
