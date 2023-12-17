@@ -24,7 +24,7 @@ function Page({}: Props) {
 
     useEffect(()=>{
         setDeliveryPrice(
-            cartPrice > 125 ? 0 : 35
+            cartPrice > 125 ? 0 : deliveryPriceConst
         )
     },[cartPrice,setDeliveryPrice,cart])
     useEffect(

@@ -97,6 +97,13 @@ export function NavbarNavigation() {
           </NavigationMenuContent>
         </NavigationMenuItem> */}
         <NavigationMenuItem>
+          <Link href="/" legacyBehavior passHref>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              Home
+            </NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
           <Link href="/services/stickers" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               Stickers
@@ -113,9 +120,9 @@ export function NavbarNavigation() {
         </NavigationMenuItem>
 
         <NavigationMenuItem>
-          <Link href="/how-to-order" legacyBehavior passHref>
+          <Link href="/about" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              How to order
+              About
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>

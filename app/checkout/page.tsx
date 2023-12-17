@@ -29,6 +29,10 @@ export default function Page({}: Props) {
     const [cartPrice,setCartPrice] = useState(0);
 
 
+    useEffect(()=>{
+        setCartPrice(getCartPrice())
+    },[cart,setCartPrice])
+
     const getCartPrice = ()=>{
         let price = 0;
         for (const item of cart) {
@@ -43,14 +47,11 @@ export default function Page({}: Props) {
             }
         }
 
-        return PriceByPrice(price)+(price > 100 ? 0 : deliveryPriceConst)
+        return PriceByPrice(price)+(price > 125 ? 0 : deliveryPriceConst)
     }
 
 
 
-    useEffect(()=>{
-        setCartPrice(getCartPrice())
-    },[cart,setCartPrice])
 
     const checkout = async () => {
         const orderItemsIds:string[] = []

@@ -23,6 +23,7 @@ import { sheetPricing } from '@/constant/pricing'
 import { PriceByPrice, SheetPrice, getPrice } from '@/lib/price'
 import { Badge } from '@/components/ui/badge'
 import CatFeet from '@/components/global/CatFeet'
+import Head from 'next/head'
 type Props = {}
 
 export default function Page({}: Props) {
@@ -90,6 +91,9 @@ export default function Page({}: Props) {
     }
   return (
     <div>
+        <Head>
+            <title>{sheetInfo?.name}</title>
+        </Head>
     <div className='max-w-5xl mx-auto  pt-8 w-full'>
         <div className='flex flex-col md:flex-row w-full py-0 md:py-16 md:gap-8 items-center relative mb-12'>
             {

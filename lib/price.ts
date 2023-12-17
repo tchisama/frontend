@@ -21,4 +21,4 @@ export const TShirtPrice = 75
 export const CupPrice = 60
 
 
-export const deliveryPriceConst = 30
+export const deliveryPriceConst = 35

@@ -13,6 +13,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '../ui/card'
 import StickerSheetsList from './StickerSheetsList'
 import StickersHomePage from './StickersHomePage'
 import CatFeet from './CatFeet'
+import profile from "@/public/logo/profile.png"
 
 type Props = {}
 
@@ -143,6 +144,37 @@ const HeroSection = (props: Props) => {
                 </Card>
             ))
           }
+        </div>
+
+
+        <div className=''>
+          <div className='flex pt-10 gap-5  md:gap-12 flex-col md:flex-row'>
+            <div className=''>
+              <h1 className='text-4xl md:text-5xl uppercase'>get latest updates</h1>
+              <h1 className='text-xl md:text-2xl uppercase'>follow up in instagram for instense updates</h1>
+            </div>
+            <Link href={"https://www.instagram.com/stickify.ma/"} className='flex items-center gap-2 w-fit'>
+              <Image src={profile} alt="" width={60} height={60} className='rounded-full'/>
+              <h3>@stickify.ma</h3>
+              <ArrowRight size={16}/>
+            </Link>
+          </div>
+          <div className='grid grid-cols-2 gap-1 md:gap-4 mt-8 md:grid-cols-4 '>
+            {
+              [
+                "https://storage.googleapis.com/stickify-storage/statick/409211350_864765418424987_1200969857405101297_n.jpg",
+                "https://storage.googleapis.com/stickify-storage/statick/409387244_377143348097840_4668389197002400899_n.jpg",
+                "https://storage.googleapis.com/stickify-storage/statick/409610373_3168029406837675_5639581349586921694_n.jpg",
+                "https://storage.googleapis.com/stickify-storage/statick/410256111_7337589212931736_2632186991800660373_n.jpg",
+              ].map((image,index)=>(
+                <div key={image} className=''>
+                  <Image src={image} alt="" width={500} height={500} className='rounded-xl w-full border drop-shadow-sm'/>
+                </div>
+              ))
+            }
+          </div>
+
+
         </div>
     </div>
     </>

@@ -9,6 +9,7 @@ import { useRouter } from 'next/navigation'
 import { Textarea } from '@/components/ui/textarea'
 import Image from 'next/image'
 import wow from "@/public/wow.png"
+import axios from '@/lib/axios'
 
 type Props = {}
 
@@ -22,6 +23,20 @@ export default function Page({}: Props) {
     const [lastName,setLastName] = useState("");
     const [message,setMessage] = useState("");
     const [phone,setPhone] = useState("");
+
+
+    const sendMessage = (e:React.FormEvent)=>{
+        setLoading(true)
+        axios.post('/contact/create',{
+            firstName:name,
+            lastName,
+            phone,
+            message
+        }).then(()=>{
+            setLoading(false)
+            router.push("/contact/success")
+        })
+    }
   return (
     <motion.div 
     initial={{ opacity: 0 ,y:-200}}
@@ -49,7 +64,7 @@ export default function Page({}: Props) {
                     <Textarea name='phone' value={message} onInput={(e:any)=>setMessage(e.target.value)} className='max-w-2xl'></Textarea>
 
                     <br />
-                    <Button disabled={loading|| !name || !message || !phone } size={"lg"} variant="secondary" className='max-w-[800px] '>
+                    <Button onClick={sendMessage} disabled={loading|| !name || !message || !phone } size={"lg"} variant="secondary" className='max-w-[800px] '>
                         {
                             loading ?
                             <>Loading <Loader className='animate-spin'/></>
